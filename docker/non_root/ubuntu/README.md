@@ -1,6 +1,6 @@
 ## Notes on Alpine
 
-This will not work out of the box on Alpine because `groupadd` and `useradd` does not exist.
+For Alpine, use `addgroup` and `adduser` instead. (need `shadow` package for useradd)
 
 Also note that alpine uses `musl` and and not use `glibc`. `musl` is partially binary compatible with glibc.
 

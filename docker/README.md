@@ -9,3 +9,5 @@
 * SIGTERM + SIGKILL vs SIGKILL
 
 see: docker events
+
+```docker start -a cid```
