@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  # annotations:
+  #   seccomp.security.alpha.kubernetes.io/pod: runtime/default
+  labels:
+    run: web3
+  name: web3
+  namespace: policydemo
+spec:
+  # securityContext:
+  #   runAsUser: 1000
+  #   runAsGroup: 3000
+  #   fsGroup: 2000
+    # supplementalGroups: 
+    #   - 3000
+  containers:
+  - image: ubuntu
+    name: web3
+    resources: {}
+    securityContext:
+      privileged: false
+      allowPrivilegeEscalation: false
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always  
+status: {}
