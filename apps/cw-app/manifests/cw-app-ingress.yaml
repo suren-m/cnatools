@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: cw-app-ingress  
+  namespace: cw-app
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
@@ -10,7 +11,10 @@ spec:
   rules:
   - http:
       paths:
-      - backend:
-          serviceName: cw-app-svc # name of your cw-app service
-          servicePort: 80
-        path: /demo-ingress-test(/|$)(.*) # for example, path: /john-cw-app(/|$)(.*)    
+      - path: /cw-app(/|$)(.*) # for example, path: /john-cw-app(/|$)(.*)    
+        pathType: Prefix
+        backend:
+          service: 
+            name: cw-app-svc # name of your cw-app service
+            port: 
+              number: 80

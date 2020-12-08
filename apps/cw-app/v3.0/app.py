@@ -12,6 +12,6 @@ def hello():
     if randrange(1, 100) > success_rate:        
         return "Internal Server Error\n", 500
     else:        
-        return "Hello from CW app - V2.1 (patched)\n", 200
+        return "Hello from CW app - V3.0\n", 200
 
-app.run(host = '0.0.0.0', port = 8080)
+app.run(host = '0.0.0.0', port = 80)

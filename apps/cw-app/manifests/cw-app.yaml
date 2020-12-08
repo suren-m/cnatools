@@ -5,6 +5,7 @@ metadata:
   labels:
     app: cw-app
   name: cw-app
+  namespace: cw-app
 spec:
   replicas: 1
   selector:
@@ -18,7 +19,7 @@ spec:
         app: cw-app
     spec:
       containers:
-      - image: surenmcode/cw-app:1.0
+      - image: surenmcode/cw-app:3.0
         name: cw-app
         resources: {}
 status: {}

@@ -5,11 +5,12 @@ metadata:
   labels:
     app: cw-app
   name: cw-app-svc
+  namespace: cw-app
 spec:
   ports:
   - port: 80
     protocol: TCP
-    targetPort: 8080
+    targetPort: 80
   selector:
     app: cw-app
   type: ClusterIP
