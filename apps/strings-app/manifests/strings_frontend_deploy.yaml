@@ -19,7 +19,7 @@ spec:
         app: strings-frontend
     spec:
       containers:
-      - image: surenmcode/strings-frontend:1.0
+      - image: surenmcode/strings-frontend:1.4
         name: strings-frontend
         resources: {}
 status: {}

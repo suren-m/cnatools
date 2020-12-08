@@ -18,13 +18,13 @@ spec:
   - host: aksdemo.contosodev.com
     http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service: 
-            name: strings-frontend
-            port:
-              number: 80
+      # - path: /
+      #   pathType: Prefix
+      #   backend:
+      #     service: 
+      #       name: strings-frontend
+      #       port:
+      #         number: 80
       - path: /strings-app(/|$)(.*)
         pathType: Prefix
         backend:
