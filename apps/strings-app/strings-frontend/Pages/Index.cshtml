@@ -5,12 +5,9 @@
 }
 
 <div class="text-center">
-    <form method="post">
-        @Html.DisplayNameFor(model => model.StringInput)
-        <input asp-for="StringInput"/>     
-        <input type="submit">      
-    </form>
-    
+    @Html.DisplayNameFor(model => model.StringInput)
+    <input asp-for="StringInput" type="text" value="@Model.StringInput"/>     
+    <button onclick="getLength()">Get Length</button>    
     <div>
     Result
         <p>Input: @Model.StringResult.Input</p>
@@ -20,3 +17,9 @@
 </div>
 
 
+<script>
+    function getLength() {
+        var input = document.getElementById("StringInput").value;
+        window.location.href = "/?input=" + input;
+    }
+</script>
