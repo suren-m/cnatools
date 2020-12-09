@@ -29,7 +29,7 @@ namespace strings_frontend.Pages
 
         public void OnGet()
         {
-
+            var test = StringResult;
         }
 
         public async Task OnPostAsync(){
@@ -39,8 +39,8 @@ namespace strings_frontend.Pages
             _logger.LogInformation("\n...Retrieving Data...\n");
 
             var request = new System.Net.Http.HttpRequestMessage();
-            var query = $"http://strings-api.strings-app/stringlength/{input}";
-            // var query = $"http://localhost:8080/stringlength/{input}";
+            //var query = $"http://strings-api.strings-app/stringlength/{input}";
+            var query = $"http://localhost:8080/stringlength/{input}";
             request.RequestUri = new Uri(query);
             
             var response = await client.SendAsync(request);
@@ -54,7 +54,9 @@ namespace strings_frontend.Pages
             );
 
             _logger.LogInformation("\n...Finished Retrieving Data...\n");
-        }
+
+            RedirectToPage("/", new { Model = StringResult });
+        }  
     }
 
     public class StringResult {
