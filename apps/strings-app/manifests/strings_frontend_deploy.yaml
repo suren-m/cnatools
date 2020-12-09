@@ -19,7 +19,10 @@ spec:
         app: strings-frontend
     spec:
       containers:
-      - image: surenmcode/strings-frontend:1.4
+      - image: surenmcode/strings-frontend:1.8
         name: strings-frontend
+        env:
+          - name: API_PATH_BASE
+            value: "strings-app"
         resources: {}
 status: {}

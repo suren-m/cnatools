@@ -4,9 +4,10 @@ metadata:
   name: strings-app-ingress
   annotations:
     kubernetes.io/ingress.class: nginx   
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    # nginx.ingress.kubernetes.io/rewrite-target: /$2
     # nginx.ingress.kubernetes.io/add-base-url : "true"
-    nginx.ingress.kubernetes.io/use-regex: "true"
+    # nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false" 
     cert-manager.io/cluster-issuer: letsencrypt
   namespace: strings-app
 spec:
@@ -25,7 +26,7 @@ spec:
       #       name: strings-frontend
       #       port:
       #         number: 80
-      - path: /strings-app(/|$)(.*)
+      - path: /strings-app
         pathType: Prefix
         backend:
           service: 
