@@ -1,0 +1,15 @@
+apiVersion: batch/v1 # Notice the api here that is different from one for deployment.
+kind: Job
+metadata:
+ name: sleepyjob
+spec:
+ parallelism: 3
+ completions: 10
+ template:
+  spec:
+   containers:
+   - name: busybox
+     image: busybox
+     command: ["sleep"]
+     args: ["5"] # sleep for 10 seconds and then exit
+   restartPolicy: OnFailure

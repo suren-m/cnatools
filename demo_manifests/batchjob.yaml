@@ -1,0 +1,18 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+ name: sleepycronjob
+spec:
+ schedule: "*/1 * * * *"
+ jobTemplate:
+  spec:
+   parallelism: 1
+   completions: 1
+   template:
+    spec:
+     containers:
+     - name: busybox
+       image: busybox
+       command: ["sleep"]
+       args: ["5"]
+     restartPolicy: OnFailure

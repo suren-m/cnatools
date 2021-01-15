@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  api-location: http://my-api
+  targetenv: demo
+metadata:
+  creationTimestamp: null
+  name: myconfig

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: webdeploy
+  name: webdeploy
+spec:
+  replicas: 20
+  selector:
+    matchLabels:
+      app: webdeploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: webdeploy
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: 
+          limits:
+            cpu: 0.2
+status: {}
+
+---
+
