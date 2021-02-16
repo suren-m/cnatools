@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: static-pv-2
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  azureDisk:
+    kind: Managed
+    diskName: static-pv-2
+    diskURI: /subscriptions/fcee4d1c-aba2-4745-aef3-a103acb67ec1/resourcegroups/demos/providers/Microsoft.Compute/disks/demo-static-pv

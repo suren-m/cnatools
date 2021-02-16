@@ -1,0 +1,9 @@
+bases:
+  - ../base
+resources:
+  - namespace.yaml
+patches:
+  - deploy.yaml
+namespace: dev
+commonLabels:
+  environment: dev
